@@ -1,0 +1,24 @@
+<h1>Bienvenido a tu Deck!!!</h1>
+<p>Seleccione las preguntas correctas</p>
+
+<!-- mostrar formulario -->
+<%= form_tag ("/question/receive_answer") %>
+  <table>
+    <tr>
+      <th>Preguntas</th>
+    </tr>
+    <% @find_deck.each do |question| %>
+     	<tr>
+     		<td><%= question.question %></td>
+     	</tr>
+      <tr>
+      	<td>
+        	<% question.answers.each do |option| %>
+          <%= radio_button_tag question.id, option.answer, option_id: option.id, answer: option.answer %><%= option.answer %>   
+          <%end%>
+        <br>
+      	</td>
+      </tr>
+    <% end %>
+ 	</table>
+<%= submit_tag ("Submit") %> 

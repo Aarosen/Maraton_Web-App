@@ -1,0 +1,10 @@
+<h1>Bienvenido!!!</h1>
+<p>Escoga el Deck con el cual quiere jugar</p>
+
+<ul>
+	<% @show_decks.each do |deck|%>
+		<li>
+			<div><%= button_to deck.name, start_path(deck), :method => "post" %></div>
+		<li>
+	<% end %>
+</ul>

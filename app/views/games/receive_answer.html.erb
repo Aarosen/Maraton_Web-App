@@ -1,0 +1,19 @@
+<h1>Bienvenido a los Resultados!!!</h1>
+<p>Aqui se encuentran todos los resultados!!!</p>
+
+<table>
+  <tr>
+    <th>Scores</th>
+  </tr>
+    <% @all_scores.each do |show| %>
+     	<tr>
+     		<td><%= show.user_id %></td>
+     	</tr>
+      <tr>
+      	<td><%= show.deck_id %></td>
+      </tr>
+      <tr>
+      	<td><%= show.score %></td>
+      </tr>
+  <% end %>
+</table>
